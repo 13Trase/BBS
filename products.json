@@ -1,0 +1,264 @@
+[
+
+    {
+        "id": 12,
+        "title": "Adidas",
+        "description": "Олимпийка size: M",
+        "price": 4300,
+        "avitoLink": "https://www.avito.ru/ekaterinburg/odezhda_obuv_aksessuary/kofta_adidas_three_stripes_4678571018?context=H4sIAAAAAAAA_wEmANn_YToxOntzOjE6IngiO3M6MTY6InU1d21GcmZqdkxtdUlxSWkiO31WHqOYJgAAAA",
+        "connectSeller": "https://web.telegram.org/k/#@egashbrowdie",
+        "images": [
+            "./images/Олимпийка Adidas Three Stripes1.png",
+            "./images/Олимпийка Adidas Three Stripes2.png",
+            "./images/Олимпийка Adidas Three Stripes3.png"
+        ],
+        "details": {
+            "type": "Олимпийка",
+            "brand": "Adidas Three Stripes",
+            "size": " M-L",
+            "gender": "Мужской",
+            "color": "Серый"
+        }
+    },
+
+
+    {
+        "id": 11,
+        "title": "Levi’s",
+        "description": "Джинсы size: M",
+        "price": 3600,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@egashbrowdie",
+        "images": [
+            "./images/Джинсы Levi’s 501 flared1.png",
+            "./images/Джинсы Levi’s 501 flared2.png",
+            "./images/Джинсы Levi’s 501 flared3.png",
+            "./images/Джинсы Levi’s 501 flared4.png"
+        ],
+        "details": {
+            "type": "Джинсы",
+            "brand": "Levis",
+            "size": " M",
+            "gender": "Мужской",
+            "color": "Синий"
+        }
+    },
+
+    {
+        "id": 10,
+        "title": "Zegna",
+        "description": "Футболка size: M",
+        "price": 4300,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@egashbrowdie",
+        "images": [
+            "./images/Футболка Zegnav21.png",
+            "./images/Футболка Zegnav22.png",
+            "./images/Футболка Zegnav23.png"
+        ],
+        "details": {
+            "type": "Футболка",
+            "brand": "Zegna",
+            "size": " M",
+            "gender": "Мужской",
+            "color": "Синий"
+        }
+    },
+
+    {
+        "id": 9,
+        "title": "Zegna",
+        "description": "Футболка size: M",
+        "price": 4300,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@egashbrowdie",
+        "images": [
+            "./images/Футболка Zegnav11.png",
+            "./images/Футболка Zegnav12.png",
+            "./images/Футболка Zegnav13.png"
+        ],
+        "details": {
+            "type": "Футболка",
+            "brand": "Zegna",
+            "size": " M",
+            "gender": "Мужской",
+            "color": "Синий"
+        }
+    },
+
+    {
+        "id": 8,
+        "title": "TNF",
+        "description": "Ветровка size: M",
+        "price": 6500,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@jikkkg1",
+        
+        "images": [
+            "./images/Ветровка The North Face HyVent1.png",
+            "./images/Ветровка The North Face HyVent2.png",
+            "./images/Ветровка The North Face HyVent3.png",
+            "./images/Ветровка The North Face HyVent4.png"
+        ],
+        "details": {
+            "type": "Ветровка",
+            "brand": "TNF",
+            "size": " M",
+            "gender": "Мужской",
+            "color": "Зеленый"
+        }
+    },
+
+
+    {
+        "id": 7,
+        "title": "Nike",
+        "description": "Зип худи size: M",
+        "price": 4300,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@egashbrowdie",
+        "images": [
+            "./images/Зип худи Nike Tech Fleece 1.png",
+            "./images/Зип худи Nike Tech Fleece 2.png",
+            "./images/Зип худи Nike Tech Fleece 3.png",
+            "./images/Зип худи Nike Tech Fleece 4.png"
+        ],
+        "details": {
+            "type": "Зип худи",
+            "brand": "Nike",
+            "size": " M",
+            "gender": "Мужской",
+            "color": "Зеленый"
+        }
+    },
+
+    {
+        "id": 6,
+        "title": "Jack Wolfskin",
+        "description": "Штаны size: M",
+        "price": 4900,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@jikkkg1",
+        "images": [
+            "./images/Штаны Jack Wolfskin Texapore O21.png",
+            "./images/Штаны Jack Wolfskin Texapore O24.png",
+            "./images/Штаны Jack Wolfskin Texapore O23.png",
+            "./images/Штаны Jack Wolfskin Texapore O22.png"
+        ],
+        "details": {
+            "type": "Штаны",
+            "brand": "Jack Wolfskin",
+            "size": " M",
+            "gender": "Мужской",
+            "color": "Черный"
+        }
+    },
+
+    {
+        "id": 5,
+        "title": "Jack Wolfskin",
+        "description": "Ветровка size: S-M",
+        "price": 6200,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@jikkkg1",
+        "images": [
+            "./images/Ветровка Jack Wolfskin Texapore3.png",
+            "./images/Ветровка Jack Wolfskin Texapore2.png",
+            "./images/Ветровка Jack Wolfskin Texapore1.png"
+        ],
+        "details": {
+            "type": "Ветровка",
+            "brand": "Jack Wolfskin",
+            "size": " S-M",
+            "gender": "Мужской",
+            "color": "Cиний"
+        }
+    },
+
+
+    {
+        "id": 1,
+        "title": "Arcteryx",
+        "description": "Лонгслив size: L-XL",
+        "price": 4200,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@jikkkg1",
+        "images": [
+            "images/arc1.png",
+            "images/arc2.png",
+            "images/arc3.png",
+            "images/arc4.png"
+        ],
+        "details": {
+            "type": "Лонгслив",
+            "brand": "Arcteryx",
+            "size": "L-XL",
+            "gender": "Унисекс",
+            "color": "Зеленый"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Lonsdale",
+        "description": "Бомбер size: L-XL",
+        "price": 13200,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@egashbrowdie",
+        "images": [
+            "images/ld1.png",
+            "images/ld2.png",
+            "images/ld3.png",
+            "images/ld4.png"
+        ],
+        "details": {
+            "type": "Бомбер",
+            "brand": "Lonsdale",
+            "size": "L-XL",
+            "gender": "Мужской",
+            "color": "Красный"
+        }
+    },
+
+    {
+        "id": 3,
+        "title": "Ralph Lauren",
+        "description": "Свитер size: S-M",
+        "price": 2790,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@zoyeq",
+        "images": [
+            "images/plr1.png",
+            "images/plr2.png",
+            "images/plr3.png"
+        ],
+        "details": {
+            "type": "Свитер",
+            "brand": "Ralph Lauren",
+            "size": "S-M",
+            "gender": "Мужской",
+            "color": "Черный"
+        }
+    },
+
+    {
+        "id": 4,
+        "title": "Calvin klein",
+        "description": "Свитошот size: M",
+        "price": 2500,
+        "avitoLink": "https://www.avito.ru",
+        "connectSeller": "https://web.telegram.org/k/#@egashbrowdie",
+        "images": [
+            "images/ck1.png",
+            "images/ck2.png"
+        ],
+        "details": {
+            "type": "свитшот",
+            "brand": "Calvin klein",
+            "size": " M",
+            "gender": "Мужской",
+            "color": "Красный"
+        }
+    }
+
+
+]

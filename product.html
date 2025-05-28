@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали товара - BBS</title>
+    <link rel="stylesheet" href="product.css">
+
+</head>
+<body>
+    <section class="header">
+        <div class="conteiner__header">
+          <div class="header__line">
+            <div class="header__logo">
+              <a href="index.html">
+              <img src="./images/BBS.png" alt="">
+              </a>
+            </div>
+            <div class="header__search">
+              <input type="text" id='searchInput' placeholder="Поиск товара..." class="search__input">
+              <button class="search__button">
+                  <img src="./images/search-icon.png" alt="Search">
+              </button>
+            </div>
+            <div class="header__profile">
+              <a href="#" id="profileButton" class="profile__link">
+                  <img src="./images/Profile.png" alt="Profile">
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <div class="product-container">
+        <div class="product-gallery">
+            <div class="slider-container">
+                <img src="" alt="Product" class="product-image" id="mainImage">
+                <div class="slider-arrows">
+                    <div class="arrow arrow-left" onclick="prevImage()">&#10094;</div>
+                    <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
+                </div>
+            </div>
+            <div class="thumbnails">
+               
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1 class="product-title" id="productTitle"></h1>
+            <div class="product-details" id="productDetails"></div>
+            <div class="product-details" id="productDetails">
+            <div class="product-specs">
+                <div class="spec-item">
+                    <span class="spec-label">Тип:</span>
+                    <span class="spec-value" id="productType"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Бренд:</span>
+                    <span class="spec-value" id="productBrand"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Размер:</span>
+                    <span class="spec-value" id="productSize"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Пол:</span>
+                    <span class="spec-value" id="productGender"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Цвет:</span>
+                    <span class="spec-value" id="productColor"></span>
+                </div>
+            </div>
+            </div>
+            <div class="price">
+                <span class="card__price--dis" id="productPrice"></span> 
+            </div>
+            <div class="product-actions">
+                <button class="card__btn">Добавить в корзину</button>
+                <a class="cardavito__btna" id="avitoLink" href="" target="_blank">
+                    <button class="cardavito__btn">
+                        <img class="avitos" src="./images/avito.png" alt="">
+                        Заказать Авито доставкой
+                    </button>
+                </a>
+                <a class="card-connect-seller" id="connectSeller" href="" target="_blank">
+                    <button class="connect-seller">
+                        <img class="connect-sellers" src="./images/chaticon.png" alt="">
+                        Связаться с продавцом
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="footer">
+        <div class="footer__container">
+            <div class="footer__logo__sc">
+                <div class="logo__qr">
+                    <img src="./images/qr-code.png" alt="qr">
+                </div>
+                <div class="logo__vk"> 
+                    <a href="https://vk.com/tgblvdybros" target="_blank">
+                        <img src="./images/VK.png" alt="VK">
+                    </a>
+                </div>
+                <div class="logo__tg"> 
+                    <a href="https://web.telegram.org/k/#@blvdybros" target="_blank">
+                        <img src="./images/TG.png" alt="TG">
+                    </a>
+                </div>
+                <div class="footer__prava">
+                    BloodyBroseStore© 2025 Все права защищены. 
+                    <a href="#" class="prava">Применяются рекомендательные технологии</a>
+                </div>
+            </div>
+            <div class="footer__text">
+                <a href="#"><div class="footer__aboutus">О нас</div></a>
+                <a href="#"><div class="footer__contact">Контакты</div></a>
+                <a href="#"><div class="footer__QA">Часто задаваемые вопросы</div></a>
+                <a href="#"><div class="footer__error">Сообщение об ошибке</div></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="auth-modal" id="authModal">
+        <div class="auth-content">
+            <button class="close-btn">&times;</button>
+            
+            <!-- Форма входа -->
+            <form class="login-form active" id="loginForm">
+                <h2>Авторизация</h2>
+                <div class="input-group">
+                    <input type="text" id="loginUsername" required>
+                    <label for="loginUsername">Логин</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" required>
+                    <label for="loginPassword">Пароль</label>
+                </div>
+                <button type="button" id="loginBtn" class="auth-btn">Войти</button>
+                <div class="switch-form">
+                    Нет аккаунта? <a class="switch-to-register">Зарегистрироваться</a>
+                </div>
+                <div id="loginMessage" class="auth-message"></div>
+            </form>
+    
+            <!-- Форма регистрации -->
+            <form class="register-form" id="registerForm">
+                <h2>Регистрация</h2>
+                <div class="input-group">
+                    <input type="text" id="regUsername" required>
+                    <label for="regUsername">Логин</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="regPassword" required>
+                    <label for="regPassword">Пароль</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="repeatPassword" required>
+                    <label for="repeatPassword">Повторите пароль</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email">E-mail</label>
+                </div>
+                <button type="button" id="registerBtn" class="auth-btn">Зарегистрироваться</button>
+                <div class="switch-form">
+                    Уже есть аккаунт? <a class="switch-to-login">Войти</a>
+                </div>
+                <div id="registerMessage" class="auth-message"></div>
+            </form>
+    
+            <!-- Блок информации о пользователе -->
+            <div class="profile-info" id="profileInfo">
+                <h2>Профиль</h2>
+                <p><strong>Логин:</strong> <span id="profileUsername"></span></p>
+                <p><strong>Почта:</strong> <span id="profileEmail"></span></p>
+                <div class="input-group">
+                    <input type="text" id="profileCity" class="auth-xz" placeholder="Введите ваш город">
+                    <button id="saveCity" class="auth-btn">Сохранить город</button>
+                </div>
+                <button id="logoutBtn" class="auth-btn logout-btn">Выйти</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="product.js"></script>
+    <script type="module" src="cart-manager.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
