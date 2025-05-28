@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomakh&family=Stick&display=swap" rel="stylesheet">
+    <title>BBS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="header">
+    <div class="conteiner__header">
+      <div class="header__line">
+        <div class="header__logo">
+          <a href="">
+          <img src="./images/BBS.png" alt="">
+          </a>
+        </div>
+        <div class="header__search">
+          <input type="text" id='searchInput' placeholder="Поиск товара..." class="search__input">
+          <button class="search__button">
+              <img src="./images/search-icon.png" alt="Search">
+          </button>
+        </div>
+        <div class="mobile-nav">
+          <div class="header__filter">
+            <button class="filter__button" id="filterButton">
+                <img src="./images/filter.png" alt="Filter">
+            </button>
+          </div>
+          <div class="header__korsina">
+            <a href="cart.html" class="korsina__link">
+                <img src="./images/Korsina.png" alt="Korsina">
+                <span id="cartCount" class="cart-count">${cartItems.reduce((sum, item) => sum + item.quantity, 0)}</span>
+            </a>
+          </div>
+          <div class="header__profile">
+            <a href="#" id="profileButton" class="profile__link">
+                <img src="./images/Profile.png" alt="Profile">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="Filtersi">
+    <div class="filters" id="filters">
+      <div class="filters__header">
+          <h3>Фильтры</h3>
+          <button class="filters__close" id="closeFilters">&times;</button>
+      </div>
+      <div class="filters__content">
+          <!-- Фильтр по размеру -->
+          <div class="filter-group">
+              <h4>Размер</h4>
+              <label><input type="checkbox" name="size" value="S"> S</label>
+              <label><input type="checkbox" name="size" value="M"> M</label>
+              <label><input type="checkbox" name="size" value="L"> L</label>
+              <label><input type="checkbox" name="size" value="XL"> XL</label>
+          </div>
+
+          <!-- Фильтр по бренду -->
+          <div class="filter-group">
+            <h4>Бренд</h4>
+            <div class="brands-flex">
+                <div class="brands-column">
+                  <div class="brands-column">
+                    <label><input type="checkbox" name="brand" value="arcteryx"> Arcteryx</label>
+                  </div>
+                    <label><input type="checkbox" name="brand" value="lonsdale"> Lonsdale</label>
+                    <label><input type="checkbox" name="brand" value="ralph lauren"> Ralph Lauren</label>
+                    <label><input type="checkbox" name="brand" value="levis"> Levis</label>
+                    <label><input type="checkbox" name="brand" value="tnf"> TNF</label>
+
+                </div>
+                <div class="brands-column">
+                    <label><input type="checkbox" name="brand" value="calvin klein"> Calvin Klein</label>
+                    <label><input type="checkbox" name="brand" value="nike"> Nike</label>
+                    <label><input type="checkbox" name="brand" value="adidas"> Adidas</label>
+                    <label><input type="checkbox" name="brand" value="jack wolfskin"> Jack Wolfskin</label>
+                    <label><input type="checkbox" name="brand" value="zegna"> Zegna</label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-group">
+          <h4>Вид</h4>
+          <div class="categories-flex">
+              <div class="categories-column">
+                  <label><input type="checkbox" name="category" value="свитер"> Свитер</label>
+                  <label><input type="checkbox" name="category" value="джинсы"> Джинсы</label>
+                  <label><input type="checkbox" name="category" value="лонгслив"> Лонгслив</label>
+                  <label><input type="checkbox" name="category" value="штаны"> Штаны</label>
+              </div>
+              <div class="categories-column">
+                  <label><input type="checkbox" name="category" value="бомбер"> Бомбер</label>
+                  <label><input type="checkbox" name="category" value="футболка"> Футболка</label>
+                  <label><input type="checkbox" name="category" value="куртка"> Куртка</label>
+                  <label><input type="checkbox" name="category" value="ветровка"> Ветровка</label>
+              </div>
+          </div>
+        <div class="filter-group">
+          <h4>Цвет</h4>
+          <div class="colors-flex">
+              <div class="colors-column">
+                  <label><input type="checkbox" name="color" value="красный"> <span class="color-circle" style="background-color: red;"></span> Красный</label>
+                  <label><input type="checkbox" name="color" value="синий"> <span class="color-circle" style="background-color: blue;"></span> Синий</label>
+                  <label><input type="checkbox" name="color" value="зеленый"> <span class="color-circle" style="background-color: green;"></span> Зеленый</label>
+              </div>
+              <div class="colors-column">
+                  <label><input type="checkbox" name="color" value="черный"> <span class="color-circle" style="background-color: black;"></span> Черный</label>
+                  <label><input type="checkbox" name="color" value="белый"> <span class="color-circle" style="background-color: white; border: 1px solid #000;"></span> Белый</label>
+                  <label><input type="checkbox" name="color" value="желтый"> <span class="color-circle" style="background-color: yellow;"></span> Желтый</label>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+          <!-- Фильтр по цене -->
+          <div class="filter-group">
+            <h4>Цена</h4>
+            <div class="price-range">
+                <input type="number" id="minPrice" placeholder="От" min="0">
+                <span class="price-separator">—</span>
+                <input type="number" id="maxPrice" placeholder="До" min="0">
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="cards">
+    
+    <div class="container container__cards" id="cardsContainer">
+      <div class="card" data-id="12">
+        <div class="card__top">
+          <a href="product.html?id=12" class="card__img">
+            <img src="./images/Олимпийка Adidas Three Stripes1.png" alt="arc" class="card__img--active">
+            <img src="./images/Олимпийка Adidas Three Stripes2.png" alt="arc">
+            <img src="./images/Олимпийка Adidas Three Stripes3.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=12" class="title title--title"> Adidas<span class="sub-title-name">/ Three Stripes</span></a>
+            <a href="product.html?id=12" class="title title--subtitle">Олимпийка <br>size: M-L</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+      <div class="card" data-id="11">
+        <div class="card__top">
+          <a href="product.html?id=11" class="card__img">
+            <img src="./images/Джинсы Levi’s 501 flared1.png" alt="arc" class="card__img--active">
+            <img src="./images/Джинсы Levi’s 501 flared2.png" alt="arc">
+            <img src="./images/Джинсы Levi’s 501 flared3.png" alt="arc">
+            <img src="./images/Джинсы Levi’s 501 flared4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">3600</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=11" class="title title--title"> Levis<span class="sub-title-name">/ 501 flared</span></a>
+            <a href="product.html?id=11" class="title title--subtitle">Джинсы <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="10">
+        <div class="card__top">
+          <a href="product.html?id=10" class="card__img">
+            <img src="./images/Футболка Zegnav21.png" alt="arc" class="card__img--active">
+            <img src="./images/Футболка Zegnav22.png" alt="arc">
+            <img src="./images/Футболка Zegnav23.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=10" class="title title--title">Zegna<span class="sub-title-name"></span></a>
+            <a href="product.html?id=10" class="title title--subtitle">Футболка <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="9">
+        <div class="card__top">
+          <a href="product.html?id=9" class="card__img">
+            <img src="./images/Футболка Zegnav11.png" alt="arc" class="card__img--active">
+            <img src="./images/Футболка Zegnav12.png" alt="arc">
+            <img src="./images/Футболка Zegnav13.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=9" class="title title--title">Zegna<span class="sub-title-name"></span></a>
+            <a href="product.html?id=9" class="title title--subtitle">Футболка <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="8">
+        <div class="card__top">
+          <a href="product.html?id=8" class="card__img">
+            <img src="./images/Ветровка The North Face HyVent1.png" alt="arc" class="card__img--active">
+            <img src="./images/Ветровка The North Face HyVent2.png" alt="arc">
+            <img src="./images/Ветровка The North Face HyVent3.png" alt="arc">
+            <img src="./images/Ветровка The North Face HyVent4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">6500</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=8" class="title title--title">TNF<span class="sub-title-name">/ HyVent </span></a>
+            <a href="product.html?id=8" class="title title--subtitle">Ветровка <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+
+      <div class="card" data-id="7">
+        <div class="card__top">
+          <a href="product.html?id=7" class="card__img">
+            <img src="./images/Зип худи Nike Tech Fleece 1.png" alt="arc" class="card__img--active">
+            <img src="./images/Зип худи Nike Tech Fleece 2.png" alt="arc">
+            <img src="./images/Зип худи Nike Tech Fleece 3.png" alt="arc">
+            <img src="./images/Зип худи Nike Tech Fleece 4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=7" class="title title--title">Nike<span class="sub-title-name">/ Tech Fleece </span></a>
+            <a href="product.html?id=7" class="title title--subtitle">Зип худи <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+      <div class="card" data-id="6">
+        <div class="card__top">
+          <a href="product.html?id=6" class="card__img">
+            <img src="./images/Штаны Jack Wolfskin Texapore O21.png" alt="arc" class="card__img--active">
+            <img src="./images/Штаны Jack Wolfskin Texapore O24.png" alt="arc">
+            <img src="./images/Штаны Jack Wolfskin Texapore O23.png" alt="arc">
+            <img src="./images/Штаны Jack Wolfskin Texapore O22.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4900</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=6" class="title title--title">Jack Wolfskin<span class="sub-title-name">/Texapore O2</span></a>
+            <a href="product.html?id=6" class="title title--subtitle">Штаны <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="5">
+        <div class="card__top">
+          <a href="product.html?id=5" class="card__img">
+            <img src="./images/Ветровка Jack Wolfskin Texapore3.png" alt="arc" class="card__img--active">
+            <img src="./images/Ветровка Jack Wolfskin Texapore2.png" alt="arc">
+            <img src="./images/Ветровка Jack Wolfskin Texapore1.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">6200</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=5" class="title title--title">Jack Wolfskin<span class="sub-title-name">/ Texapore</span></a>
+            <a href="product.html?id=5" class="title title--subtitle">Ветровка <br>size: S-M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+      <div class="card" data-id="1">
+        <div class="card__top">
+          <a href="product.html?id=1" class="card__img">
+            <img src="./images/arc1.png" alt="arc" class="card__img--active">
+            <img src="./images/arc2.png" alt="arc">
+            <img src="./images/arc3.png" alt="arc">
+            <img src="./images/arc4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4200</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=1" class="title title--title">Arcteryx<span class="sub-title-name"></span></a>
+            <a href="product.html?id=1" class="title title--subtitle">Лонгслив <br>size: L-XL</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+      <div class="card" data-id="2">
+        <div class="card__top">
+          <a href="product.html?id=2" class="card__img">
+            <img src="./images/ld1.png" alt="ld" class="card__img--active">
+            <img src="./images/ld2.png" alt="ld" >
+            <img src="./images/ld3.png" alt="ld" >
+            <img src="./images/ld4.png" alt="ld" >
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__label">-10%</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">12000</div>
+            <div class="card__price card__price--common">13200</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=2" class="title title--title">Lonsdale<span class="sub-title-name"></span></a>
+            <a href="product.html?id=2" class="title title--subtitle">Бомбер <br>size: L-XL</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+      <div class="card" data-id="3">
+        <div class="card__top">
+          <a href="product.html?id=3" class="card__img">
+            <img src="./images/plr1.png" alt="plr" class="card__img--active">
+            <img src="./images/plr2.png" alt="plr">
+            <img src="./images/plr3.png" alt="plr">
+            <img src="./images/plr4.png" alt="plr">
+          </a>
+          <div class="card__indicators"></div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">2790</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=3" class="title title--title"> Ralph Lauren<span class="sub-title-name"></span></a>
+            <a href="product.html?id=3" class="title title--subtitle">Свитер <br>size: S-M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+      <div class="card" data-id="4">
+        <div class="card__top">
+          <a href="product.html?id=4" class="card__img">
+            <img src="./images/Ck1.png" alt="CK" class="card__img--active">
+            <img src="./images/Ck2.png" alt="CK" >
+          </a>
+          <div class="card__indicators"></div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">2500</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=4" class="title title--title">Calvin Klein<span class="sub-title-name"></span></a>
+            <a href="product.html?id=4" class="title title--subtitle">Свитшот <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+      <!--1111111111111111111111-->
+      <div class="card" data-id="12">
+        <div class="card__top">
+          <a href="product.html?id=12" class="card__img">
+            <img src="./images/Олимпийка Adidas Three Stripes1.png" alt="arc" class="card__img--active">
+            <img src="./images/Олимпийка Adidas Three Stripes2.png" alt="arc">
+            <img src="./images/Олимпийка Adidas Three Stripes3.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=12" class="title title--title"> Adidas<span class="sub-title-name">/ Three Stripes</span></a>
+            <a href="product.html?id=12" class="title title--subtitle">Олимпийка <br>size: M-L</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="11">
+        <div class="card__top">
+          <a href="product.html?id=11" class="card__img">
+            <img src="./images/Джинсы Levi’s 501 flared1.png" alt="arc" class="card__img--active">
+            <img src="./images/Джинсы Levi’s 501 flared2.png" alt="arc">
+            <img src="./images/Джинсы Levi’s 501 flared3.png" alt="arc">
+            <img src="./images/Джинсы Levi’s 501 flared4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">3600</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=11" class="title title--title"> Levis<span class="sub-title-name">/ 501 flared</span></a>
+            <a href="product.html?id=11" class="title title--subtitle">Джинсы <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="10">
+        <div class="card__top">
+          <a href="product.html?id=10" class="card__img">
+            <img src="./images/Футболка Zegnav21.png" alt="arc" class="card__img--active">
+            <img src="./images/Футболка Zegnav22.png" alt="arc">
+            <img src="./images/Футболка Zegnav23.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=10" class="title title--title">Zegna<span class="sub-title-name"></span></a>
+            <a href="product.html?id=10" class="title title--subtitle">Футболка <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="9">
+        <div class="card__top">
+          <a href="product.html?id=9" class="card__img">
+            <img src="./images/Футболка Zegnav11.png" alt="arc" class="card__img--active">
+            <img src="./images/Футболка Zegnav12.png" alt="arc">
+            <img src="./images/Футболка Zegnav13.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=9" class="title title--title">Zegna<span class="sub-title-name"></span></a>
+            <a href="product.html?id=9" class="title title--subtitle">Футболка <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="8">
+        <div class="card__top">
+          <a href="product.html?id=8" class="card__img">
+            <img src="./images/Ветровка The North Face HyVent1.png" alt="arc" class="card__img--active">
+            <img src="./images/Ветровка The North Face HyVent2.png" alt="arc">
+            <img src="./images/Ветровка The North Face HyVent3.png" alt="arc">
+            <img src="./images/Ветровка The North Face HyVent4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">6500</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=8" class="title title--title">TNF<span class="sub-title-name">/ HyVent </span></a>
+            <a href="product.html?id=8" class="title title--subtitle">Ветровка <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+
+      <div class="card" data-id="7">
+        <div class="card__top">
+          <a href="product.html?id=7" class="card__img">
+            <img src="./images/Зип худи Nike Tech Fleece 1.png" alt="arc" class="card__img--active">
+            <img src="./images/Зип худи Nike Tech Fleece 2.png" alt="arc">
+            <img src="./images/Зип худи Nike Tech Fleece 3.png" alt="arc">
+            <img src="./images/Зип худи Nike Tech Fleece 4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4300</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=7" class="title title--title">Nike<span class="sub-title-name">/ Tech Fleece </span></a>
+            <a href="product.html?id=7" class="title title--subtitle">Зип худи <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+      <div class="card" data-id="6">
+        <div class="card__top">
+          <a href="product.html?id=6" class="card__img">
+            <img src="./images/Штаны Jack Wolfskin Texapore O21.png" alt="arc" class="card__img--active">
+            <img src="./images/Штаны Jack Wolfskin Texapore O24.png" alt="arc">
+            <img src="./images/Штаны Jack Wolfskin Texapore O23.png" alt="arc">
+            <img src="./images/Штаны Jack Wolfskin Texapore O22.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4900</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=6" class="title title--title">Jack Wolfskin<span class="sub-title-name">/Texapore O2</span></a>
+            <a href="product.html?id=6" class="title title--subtitle">Штаны <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+      <div class="card" data-id="5">
+        <div class="card__top">
+          <a href="product.html?id=5" class="card__img">
+            <img src="./images/Ветровка Jack Wolfskin Texapore3.png" alt="arc" class="card__img--active">
+            <img src="./images/Ветровка Jack Wolfskin Texapore2.png" alt="arc">
+            <img src="./images/Ветровка Jack Wolfskin Texapore1.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__new">New!</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">6200</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=5" class="title title--title">Jack Wolfskin<span class="sub-title-name">/ Texapore</span></a>
+            <a href="product.html?id=5" class="title title--subtitle">Ветровка <br>size: S-M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+      <div class="card" data-id="1">
+        <div class="card__top">
+          <a href="product.html?id=1" class="card__img">
+            <img src="./images/arc1.png" alt="arc" class="card__img--active">
+            <img src="./images/arc2.png" alt="arc">
+            <img src="./images/arc3.png" alt="arc">
+            <img src="./images/arc4.png" alt="arc">
+          </a>
+          <div class="card__indicators"></div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">4200</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=1" class="title title--title">Arcteryx<span class="sub-title-name"></span></a>
+            <a href="product.html?id=1" class="title title--subtitle">Лонгслив <br>size: L-XL</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+
+
+      <div class="card" data-id="2">
+        <div class="card__top">
+          <a href="product.html?id=2" class="card__img">
+            <img src="./images/ld1.png" alt="ld" class="card__img--active">
+            <img src="./images/ld2.png" alt="ld" >
+            <img src="./images/ld3.png" alt="ld" >
+            <img src="./images/ld4.png" alt="ld" >
+          </a>
+          <div class="card__indicators"></div>
+          <div class="card__label">-10%</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">12000</div>
+            <div class="card__price card__price--common">13200</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=2" class="title title--title">Lonsdale<span class="sub-title-name"></span></a>
+            <a href="product.html?id=2" class="title title--subtitle">Бомбер <br>size: L-XL</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+      <div class="card" data-id="3">
+        <div class="card__top">
+          <a href="product.html?id=3" class="card__img">
+            <img src="./images/plr1.png" alt="plr" class="card__img--active">
+            <img src="./images/plr2.png" alt="plr">
+            <img src="./images/plr3.png" alt="plr">
+            <img src="./images/plr4.png" alt="plr">
+          </a>
+          <div class="card__indicators"></div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">2790</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=3" class="title title--title"> Ralph Lauren<span class="sub-title-name"></span></a>
+            <a href="product.html?id=3" class="title title--subtitle">Свитер <br>size: S-M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+      <div class="card" data-id="4">
+        <div class="card__top">
+          <a href="product.html?id=4" class="card__img">
+            <img src="./images/Ck1.png" alt="CK" class="card__img--active">
+            <img src="./images/Ck2.png" alt="CK" >
+          </a>
+          <div class="card__indicators"></div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__prices">
+            <div class="card__price card__price--dis">2500</div>
+          </div>
+          <div class="alltitle">
+            <a href="product.html?id=4" class="title title--title">Calvin Klein<span class="sub-title-name"></span></a>
+            <a href="product.html?id=4" class="title title--subtitle">Свитшот <br>size: M</a>
+          </div>
+          <button class="card__btn">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section">
+      <div class="review-track moving-right">
+          <!-- Первый ряд -->
+          <div class="review-card">
+              <a class="review-card-g" href="https://t.me/blvdybros_feedback/198" target="_blank" rel="noopener noreferrer">
+                <div class="review-content">
+                    <h3 class="review-author"><img class="logo__tgo" src="./images/TG.png" alt="TG">ника</h3>
+                    <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                    <p class="review-text">покупала по предоплате,все понравилось😉</p>
+                </div>
+              </a>
+          </div>
+          <div class="review-card">
+            <a class="review-card-g" href="https://t.me/blvdybros_feedback/195" target="_blank" rel="noopener noreferrer">
+              <div class="review-content">
+                  <h3 class="review-author"><img class="logo__tgo" src="./images/TG.png" alt="TG">Крымская лаванда</h3>
+                  <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                  <p class="review-text">Привет, штаны забрал, все кайф</p>
+              </div>
+            </a>
+          </div>
+          <div class="review-card">
+              <a class="review-card-g" href="https://t.me/blvdybros_feedback/194" target="_blank" rel="noopener noreferrer">
+                <div class="review-content">
+                    <h3 class="review-author"><img class="logo__tgo" src="./images/TG.png" alt="TG">st1se01</h3>
+                    <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                    <p class="review-text">Все прошло хорошо, пролавец честный, всем удачных покупок🤝</p>
+                </div>
+              </a>
+          </div>
+          <!-- Добавьте еще отзывов -->
+      </div>
+
+      <div class="review-track moving-left">
+          <!-- Второй ряд -->
+            <div class="review-card">
+              <a class="review-card-g" href="https://t.me/blvdybros_feedback/197" target="_blank" rel="noopener noreferrer">
+                <div class="review-content">
+                    <h3 class="review-author"><img class="logo__tgo" src="./images/TG.png" alt="TG">Химчистка мебели</h3>
+                    <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                    <p class="review-text">Приятный чувак, замерил все, меня интерисующие веши, предоставил фото и отправил достаточно быстро, все топ, рекомендую😊</p>
+                </div>
+              </a>
+            </div>
+            <div class="review-card">
+              <a class="review-card-g" href="https://www.avito.ru/brands/9d77bf40c9d6e7f4e040dcd36a06baf3?gdlkerfdnwq=101&page_from=from_item_header&iid=4640889509&page_from=from_item_card_icon&iid=4640889509#open-reviews-list" target="_blank" rel="noopener noreferrer">
+                <div class="review-content">
+                    <h3 class="review-author"><img class="avitoso" src="./images/avito.png" alt="">Дмитрий Малышев</h3>
+                    <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                    <p class="review-text">Все четко , продавцу спасибо</p>
+                </div>
+              </a>
+            </div>
+            <div class="review-card">
+                <a class="review-card-g" href="https://www.avito.ru/brands/9d77bf40c9d6e7f4e040dcd36a06baf3?gdlkerfdnwq=101&page_from=from_item_header&iid=4640889509&page_from=from_item_card_icon&iid=4640889509#open-reviews-list" target="_blank" rel="noopener noreferrer">
+                  <div class="review-content">
+                      <h3 class="review-author"><img class="avitoso" src="./images/avito.png" alt="">DENIZ ORIGINAL</h3>
+                      <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                      <p class="review-text">Рекомендую данного продавца! 😎👍</p>
+                  </div>
+                </a>
+            </div>
+          <!-- Добавьте еще отзывов -->
+      </div>
+
+      <div class="review-track moving-right">
+        <!-- Третий ряд -->
+        <div class="review-card">
+            <a class="review-card-g" href="https://t.me/blvdybros_feedback/196" target="_blank" rel="noopener noreferrer">
+              <div class="review-content">
+                  <h3 class="review-author"><img class="logo__tgo" src="./images/TG.png" alt="TG">!SESH!</h3>
+                  <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                  <p class="review-text">Купил кофту TNF и Jeck все очень понравилось, очень хорошее обслуживание,одежда легитная все качественно прям как в описании, рекомендую к покупке вещей в данном тгк</p>
+              </div>
+            </a>
+
+        </div>
+        <div class="review-card">
+            <a class="review-card-g" href="https://www.avito.ru/brands/9d77bf40c9d6e7f4e040dcd36a06baf3?gdlkerfdnwq=101&page_from=from_item_header&iid=4640889509&page_from=from_item_card_icon&iid=4640889509#open-reviews-list" target="_blank" rel="noopener noreferrer">
+              <div class="review-content">
+                  <h3 class="review-author"><img class="avitoso" src="./images/avito.png" alt="">Nik</h3>
+                  <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                  <p class="review-text">Все отлично!</p>
+              </div>
+            </a>
+        </div>
+        <div class="review-card">
+            <a class="review-card-g" href="https://www.avito.ru/brands/9d77bf40c9d6e7f4e040dcd36a06baf3?gdlkerfdnwq=101&page_from=from_item_header&iid=4640889509&page_from=from_item_card_icon&iid=4640889509#open-reviews-list" target="_blank" rel="noopener noreferrer">
+              <div class="review-content">
+                  <h3 class="review-author"><img class="avitoso" src="./images/avito.png" alt="">BBmarket</h3>
+                  <h3 class="review-author">⭐️⭐️⭐️⭐️⭐️</h3>
+                  <p class="review-text">Продавца советую, быстро ответил, оперативно отправил, всё круто!</p>
+              </div>
+            </a>
+        </div>
+        <!-- Добавьте еще отзывов -->
+    </div>
+
+
+    <style>
+
+    .logo__tgo{
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+
+    }
+
+    .avitoso {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+
+    }
+    .reviews-section {
+      padding: 60px 0px;
+      margin-top: 30px;
+      background-color: #000000;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Open sans';
+      overflow-x: hidden;
+
+    }
+
+    .review-track {
+      display: flex;
+      gap: 30px;
+      padding: 20px 10px;
+      flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+      width: max-content; /* Ширина равна содержимому */
+    }
+
+    .review-card {
+      width: 350px; /* Фиксированная ширина карточки */
+      flex: 0 0 auto; /* Запрещаем сжатие/растяжение */
+      background: rgb(233, 233, 233);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      min-height: 200px;
+      flex-shrink: 0;
+      padding: 25px;
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .review-card-g{
+      text-decoration: none;
+      color: #000;
+    }
+
+    .review-content {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .review-author {
+      margin: 0;
+      font-size: 1.1em;
+      color: #2c2c2c;
+      font-weight: 600;
+    }
+
+    .review-text {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+      font-size: 0.95em;
+    }
+
+    /* Анимации */
+    .moving-right {
+      animation: slideRight 75s linear infinite;
+    }
+
+    .moving-left {
+      animation: slideLeft 85s linear infinite;
+    }
+
+    @keyframes slideRight {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-30%); }
+    }
+
+    @keyframes slideLeft {
+      0% { transform: translateX(-30%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Градиенты для плавного скрытия краев */
+    .reviews-section::before,
+    .reviews-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .reviews-section::before {
+      left: 0;
+      background: linear-gradient(to right, #f9f9f9 20%, transparent);
+    }
+
+    .reviews-section::after {
+      right: 0;
+      background: linear-gradient(to left, #f9f9f9 20%, transparent);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+    .reviews-section {
+        overflow-x: auto;
+    }
+    
+    .review-track {
+        padding-bottom: 30px; /* Место для скролла */
+    }
+}
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Дублируем контент для бесконечной анимации
+      const tracks = document.querySelectorAll('.review-track');
+      
+      tracks.forEach(track => {
+          const originalContent = track.innerHTML;
+          // Создаем копии для плавной анимации
+          track.innerHTML = originalContent + originalContent + originalContent + originalContent + originalContent + originalContent + originalContent;
+          
+          // Для левого направления начинаем с середины
+          if(track.classList.contains('moving-left')) {
+              track.style.transform = 'translateX(-40%)';
+          }
+      });
+    });
+    </script>
+
+  </section>
+
+  
+  <section class="footer">
+    <div class="footer__container">
+        <div class="footer__logo__sc">
+            <div class="logo__qr">
+                  <img src="./images/qr-code.png" alt="qr">
+            </div>
+            <div class="logo__vk"> 
+                <a href="https://vk.com/tgblvdybros" target="_blank">
+                    <img src="./images/VK.png" alt="VK">
+                </a>
+            </div>
+            <div class="logo__tg"> 
+                <a href="https://web.telegram.org/k/#@blvdybros" target="_blank">
+                    <img src="./images/TG.png" alt="TG">
+                </a>
+            </div>
+            <div class="footer__prava">
+                BloodyBroseStore© 2025 Все права защищены. 
+                <a href="#" class="prava">Применяются рекомендательные технологии</a>
+            </div>
+        </div>
+        <div class="footer__text">
+            <a href="#"><div class="footer__aboutus">О нас</div></a>
+            <a href="#"><div class="footer__contact">Контакты</div></a>
+            <a href="#"><div class="footer__QA">Часто задаваемые вопросы</div></a>
+            <a href="#"><div class="footer__error">Сообщение об ошибке</div></a>
+        </div>
+    </div>
+  </section>
+
+  <div class="auth-modal" id="authModal">
+    <div class="auth-content">
+        <button class="close-btn">&times;</button>
+        
+        <!-- Форма входа -->
+        <form class="login-form active" id="loginForm">
+            <h2>Авторизация</h2>
+            <div class="input-group">
+                <input type="text" id="loginUsername" required>
+                <label for="loginUsername">Логин</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" required>
+                <label for="loginPassword">Пароль</label>
+            </div>
+            <button type="button" id="loginBtn" class="auth-btn">Войти</button>
+            <div class="switch-form">
+                Нет аккаунта? <a class="switch-to-register">Зарегистрироваться</a>
+            </div>
+            <div id="loginMessage" class="auth-message"></div>
+        </form>
+
+        <!-- Форма регистрации -->
+        <form class="register-form" id="registerForm">
+            <h2>Регистрация</h2>
+            <div class="input-group">
+                <input type="text" id="regUsername" required>
+                <label for="regUsername">Логин</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="regPassword" required>
+                <label for="regPassword">Пароль</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="repeatPassword" required>
+                <label for="repeatPassword">Повторите пароль</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" required>
+                <label for="email">E-mail</label>
+            </div>
+            <button type="button" id="registerBtn" class="auth-btn">Зарегистрироваться</button>
+            <div class="switch-form">
+                Уже есть аккаунт? <a class="switch-to-login">Войти</a>
+            </div>
+            <div id="registerMessage" class="auth-message"></div>
+        </form>
+
+        <!-- Блок информации о пользователе -->
+        <div class="profile-info" id="profileInfo">
+            <h2>Профиль</h2>
+            <p><strong>Логин:</strong> <span id="profileUsername"></span></p>
+            <p><strong>Почта:</strong> <span id="profileEmail"></span></p>
+            <div class="input-group">
+                <input type="text" id="profileCity" class="auth-xz" placeholder="Введите ваш город">
+                <button id="saveCity" class="auth-btn">Сохранить город</button>
+            </div>
+            <button id="logoutBtn" class="auth-btn logout-btn">Выйти</button>
+        </div>
+    </div>
+  </div>
+  <script type="module" src="cart-manager.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
